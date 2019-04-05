@@ -18,3 +18,15 @@ def pytlg(message, json_path = 'telegram_keys.json'):
         pass
 
     logging.disable(logging.NOTSET)
+	
+
+
+import sys
+import logging
+from logging.config import fileConfig
+
+class tlgHandler(logging.StreamHandler):  
+    def __init__(self):
+        logging.StreamHandler.__init__(self)
+    def emit(self, record): 
+	    pytlg(record.message)
