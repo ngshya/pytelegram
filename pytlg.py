@@ -13,7 +13,7 @@ def pytlg(message, json_path = 'telegram_keys.json'):
             token = k['telegram_token']
             chat_id = k['telegram_chat_id']
         bot = telegram.Bot(token=token)
-        bot.sendMessage(chat_id=chat_id, text=message)
+        bot.sendMessage(chat_id = chat_id, text = message, timeout = 1)
     except:
         pass
 
